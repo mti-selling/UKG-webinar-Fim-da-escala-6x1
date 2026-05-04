@@ -3,164 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte Ejecutivo Webinar - UKG | Ataway</title>
+    <title>Executive Report - UKG | Ataway</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; background-color: #020617; }
         .custom-scrollbar::-webkit-scrollbar { width: 5px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #0f172a; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #334155; }
+        .tech-gradient { background: linear-gradient(135deg, #0f172a 0%, #020617 100%); }
+        .accent-border { border-color: rgba(0, 223, 216, 0.2); }
+        .card-bg { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); }
+        .text-cyan { color: #00dfd8; }
+        .bg-cyan { background-color: #00dfd8; }
     </style>
 </head>
-<body class="bg-[#f8fafc] text-slate-900 selection:bg-indigo-100">
+<body class="text-slate-200">
 
-    <!-- Hero Banner con Logo MTI -->
-    <header class="bg-[#0f172a] text-white overflow-hidden relative border-b-4 border-[#00dfd8]">
-        <!-- Contenedor Logo MTI (Superior Derecho) -->
-        <div class="absolute top-6 right-6 z-20">
-            <div class="glass p-2 rounded-xl border border-white/10 w-24 h-24 flex items-center justify-center overflow-hidden">
+    <!-- Header Tecnológico -->
+    <header class="relative border-b border-white/10 overflow-hidden pt-12 pb-16 tech-gradient">
+        <!-- Logo MTI Superior Derecho -->
+        <div class="absolute top-8 right-8 z-30">
+            <div class="bg-white/5 backdrop-blur-md p-3 rounded-xl border border-white/10 w-24 h-24 flex items-center justify-center">
                 <img src="mti-logo.png" alt="MTI Logo" class="max-w-full max-h-full object-contain" onerror="this.parentElement.style.display='none'">
+                <span class="text-[10px] text-white/20 uppercase font-bold text-center">MTI LOGO</span>
             </div>
         </div>
 
-        <div class="max-w-6xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
-            <div class="flex-1 z-10">
-                <div class="flex items-center space-x-4 mb-8">
-                    <span class="bg-[#00dfd8] text-[#0f172a] px-3 py-1 rounded text-xs font-black uppercase tracking-widest text-center">Webinar</span>
-                    <div class="flex items-center space-x-2 text-xl font-bold">
-                        <span class="text-white">UKG</span>
-                        <span class="text-slate-500">|</span>
-                        <span class="text-white lowercase">ataway</span>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <!-- Título Ajustado -->
+                <div class="flex-1 text-center lg:text-left">
+                    <div class="flex items-center justify-center lg:justify-start space-x-3 mb-6">
+                        <span class="bg-cyan text-slate-900 px-3 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter">Live Session Report</span>
+                        <div class="h-4 w-px bg-white/20"></div>
+                        <div class="flex items-center space-x-2 text-lg font-bold tracking-tight">
+                            <span>UKG</span>
+                            <span class="text-slate-500 font-light">|</span>
+                            <span>ataway</span>
+                        </div>
                     </div>
-                </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8">
-                    Fim da escala 6x1, redução da jornada de trabalho e o futuro da gestão de talentos no Brasil
-                </h1>
-                <div class="flex flex-wrap gap-6 mb-8 text-slate-300">
-                    <div class="flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
-                        <i data-lucide="calendar" class="w-5 h-5 text-[#00dfd8]"></i>
-                        <span class="text-sm font-bold">30 de abril</span>
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl font-black leading-tight text-white mb-6">
+                        Fim da escala 6x1, redução da jornada de trabalho e o futuro da gestão de talentos no Brasil
+                    </h1>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 text-xs font-bold text-slate-400">
+                        <div class="flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-lg border border-white/10">
+                            <i data-lucide="calendar" class="w-4 h-4 text-cyan"></i>
+                            <span>QUINTA-FEIRA, 30 DE ABRIL</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-lg border border-white/10">
+                            <i data-lucide="clock" class="w-4 h-4 text-cyan"></i>
+                            <span>11:00 A.M. (BR GMT-3)</span>
+                        </div>
                     </div>
-                    <div class="flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
-                        <i data-lucide="clock" class="w-5 h-5 text-[#00dfd8]"></i>
-                        <span class="text-sm font-bold">11:00 a.m. (BR GMT-3)</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="flex-1 grid grid-cols-2 gap-4 z-10">
-                <!-- Foto Natalia Barbieri -->
-                <div class="bg-slate-800/50 p-4 rounded-2xl border border-white/5 text-center flex flex-col items-center">
-                    <div class="w-24 h-24 bg-slate-700 rounded-2xl mx-auto mb-3 overflow-hidden border-2 border-[#00dfd8]/30 shadow-lg">
-                        <img src="Natalia Barbieri.jpeg" alt="Natalia Barbieri" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=Natalia'">
-                    </div>
-                    <p class="text-sm font-bold">Natalia Barbieri</p>
-                    <p class="text-[10px] text-slate-400 mt-1 uppercase leading-tight">Head de Operações WFM na Ataway</p>
                 </div>
 
-                <!-- Foto Andrea -->
-                <div class="bg-slate-800/50 p-4 rounded-2xl border border-white/5 text-center flex flex-col items-center">
-                    <div class="w-24 h-24 bg-slate-700 rounded-2xl mx-auto mb-3 overflow-hidden border-2 border-[#00dfd8]/30 shadow-lg">
-                        <img src="Andrea.jpg" alt="Andrea Tavares" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=Andrea'">
+                <!-- Participantes Balanceadas -->
+                <div class="flex gap-4">
+                    <div class="text-center group">
+                        <div class="w-32 h-40 bg-slate-800 rounded-2xl mb-3 overflow-hidden border border-white/10 group-hover:border-cyan/50 transition-all">
+                            <img src="Natalia Barbieri.jpeg" alt="Natalia Barbieri" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/200x250?text=Natalia'">
+                        </div>
+                        <p class="text-sm font-bold text-white">Natalia Barbieri</p>
+                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mt-1">Head WFM Ataway</p>
                     </div>
-                    <p class="text-sm font-bold">Andrea Tavares</p>
-                    <p class="text-[10px] text-slate-400 mt-1 uppercase leading-tight">Advogada Trabalhista Dias Pamplona</p>
+                    <div class="text-center group">
+                        <div class="w-32 h-40 bg-slate-800 rounded-2xl mb-3 overflow-hidden border border-white/10 group-hover:border-cyan/50 transition-all">
+                            <img src="Andrea.jpg" alt="Andrea Tavares" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/200x250?text=Andrea'">
+                        </div>
+                        <p class="text-sm font-bold text-white">Andrea Tavares</p>
+                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mt-1">Advogada Trabalhista</p>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <!-- Decorativos de fondo -->
-        <div class="absolute top-0 right-0 w-64 h-64 bg-[#00dfd8]/5 blur-[100px] rounded-full"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/5 blur-[120px] rounded-full"></div>
+        <!-- Subtle Pattern Overlay -->
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 mt-16 space-y-12">
+    <main class="max-w-6xl mx-auto px-6 -mt-8 pb-20 relative z-20">
         
-        <!-- 📊 Resumen General -->
-        <section>
-            <div class="flex items-center space-x-3 mb-6">
-                <div class="bg-slate-900 p-2 rounded-lg text-white">
-                    <i data-lucide="zap" class="w-5 h-5"></i>
+        <!-- 📊 Resumen General Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="card-bg border border-white/10 p-6 rounded-2xl">
+                <div class="flex justify-between items-start mb-4">
+                    <i data-lucide="user-plus" class="text-cyan w-5 h-5"></i>
+                    <span class="text-[10px] font-bold text-slate-500 uppercase">Contactos Totales</span>
                 </div>
-                <h2 class="text-2xl font-bold text-slate-800 tracking-tight">📊 Resumen General del Webinar</h2>
+                <p class="text-xs text-slate-400 font-medium mb-1">Registros totales</p>
+                <p class="text-3xl font-black text-white">366</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-indigo-300 transition-all hover:shadow-md">
-                    <p class="text-slate-500 font-bold text-sm uppercase tracking-wide">Registros totales (contactos)</p>
-                    <p class="text-4xl font-black text-slate-900 mt-1 tracking-tighter">366</p>
+            <div class="card-bg border border-white/10 p-6 rounded-2xl border-l-cyan/30">
+                <div class="flex justify-between items-start mb-4">
+                    <i data-lucide="activity" class="text-cyan w-5 h-5"></i>
+                    <span class="text-[10px] font-bold text-slate-500 uppercase">Asistencia Real</span>
                 </div>
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-indigo-300 transition-all hover:shadow-md">
-                    <p class="text-slate-500 font-bold text-sm uppercase tracking-wide">Participantes reales (contactos)</p>
-                    <p class="text-4xl font-black text-slate-900 mt-1 tracking-tighter">292</p>
-                </div>
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-indigo-300 transition-all hover:shadow-md">
-                    <p class="text-slate-500 font-bold text-sm uppercase tracking-wide">Empresas registradas</p>
-                    <p class="text-4xl font-black text-slate-900 mt-1 tracking-tighter">172</p>
-                </div>
+                <p class="text-xs text-slate-400 font-medium mb-1">Participantes reales</p>
+                <p class="text-3xl font-black text-white">292</p>
             </div>
-        </section>
+            <div class="card-bg border border-white/10 p-6 rounded-2xl">
+                <div class="flex justify-between items-start mb-4">
+                    <i data-lucide="building-2" class="text-cyan w-5 h-5"></i>
+                    <span class="text-[10px] font-bold text-slate-500 uppercase">Empresas</span>
+                </div>
+                <p class="text-xs text-slate-400 font-medium mb-1">Empresas registradas</p>
+                <p class="text-3xl font-black text-white">172</p>
+            </div>
+        </div>
 
-        <!-- 📈 KPIs Clave -->
-        <section class="bg-indigo-600 rounded-[2.5rem] p-10 text-white shadow-xl shadow-indigo-100 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 opacity-10">
-                <i data-lucide="trending-up" class="w-48 h-48"></i>
+        <!-- 📈 KPIs Clave - Rediseño Ejecutivo -->
+        <section class="mb-12">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-cyan p-1.5 rounded text-slate-900"><i data-lucide="bar-chart-3" class="w-4 h-4"></i></div>
+                <h2 class="text-lg font-black uppercase tracking-widest text-white">📈 KPIs Clave del Evento</h2>
             </div>
-            <div class="relative z-10">
-                <h2 class="text-2xl font-bold mb-8 flex items-center tracking-tight">
-                    <i data-lucide="trending-up" class="mr-3"></i> 📈 KPIs clave
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
-                        <p class="text-indigo-100 font-bold text-xs uppercase tracking-widest mb-2">🔹 1. Tasa de participación (contactos)</p>
-                        <p class="text-4xl font-black tracking-tighter">79.8%</p>
-                        <p class="text-indigo-200 text-sm mt-1 font-medium italic">292 / 366</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- KPI 1 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl relative">
+                    <p class="text-[10px] font-black text-cyan uppercase mb-6">🔹 1. Tasa de participación (contactos)</p>
+                    <div class="flex items-baseline space-x-2">
+                        <span class="text-5xl font-black text-white tracking-tighter">79.8%</span>
                     </div>
-                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
-                        <p class="text-indigo-100 font-bold text-xs uppercase tracking-widest mb-2">🔹 2. Empresas ICP dentro de la base</p>
-                        <p class="text-4xl font-black tracking-tighter">21.5%</p>
-                        <p class="text-indigo-200 text-sm mt-1 font-medium italic">37 / 172 (37 confirmadas)</p>
+                    <div class="mt-4 flex items-center space-x-2 text-slate-400 text-xs">
+                        <span class="font-bold">292</span> asistieron de <span class="font-bold">366</span> registrados
                     </div>
-                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
-                        <p class="text-indigo-100 font-bold text-xs uppercase tracking-widest mb-2">🔹 3. Tasa de asistencia de empresas ICP</p>
-                        <p class="text-4xl font-black tracking-tighter">37.8%</p>
-                        <p class="text-indigo-200 text-sm mt-1 font-medium italic">14 asistentes / 37 registradas</p>
+                    <div class="mt-4 h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                        <div class="h-full bg-cyan" style="width: 79.8%"></div>
+                    </div>
+                </div>
+
+                <!-- KPI 2 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl">
+                    <p class="text-[10px] font-black text-cyan uppercase mb-6">🔹 2. Empresas ICP dentro de la base</p>
+                    <div class="flex items-baseline space-x-2">
+                        <span class="text-5xl font-black text-white tracking-tighter">21.5%</span>
+                    </div>
+                    <div class="mt-4 text-slate-400 text-xs leading-relaxed">
+                        <span class="font-bold text-white">37</span> empresas ICP confirmadas<br>sobre <span class="font-bold text-white">172</span> organizaciones registradas
+                    </div>
+                </div>
+
+                <!-- KPI 3 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl border-cyan/20">
+                    <p class="text-[10px] font-black text-cyan uppercase mb-6">🔹 3. Tasa de asistencia de empresas ICP</p>
+                    <div class="flex items-baseline space-x-2">
+                        <span class="text-5xl font-black text-white tracking-tighter">37.8%</span>
+                    </div>
+                    <div class="mt-4 text-slate-400 text-xs leading-relaxed">
+                        <span class="font-bold text-white">14</span> de las <span class="font-bold text-white">37</span> empresas ICP registradas asistieron a la sesión
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Engagement y Perfil -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <section class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200">
-                <h2 class="text-xl font-bold text-slate-800 mb-8 flex items-center tracking-tight">
-                    <i data-lucide="clock" class="mr-3 text-indigo-600"></i> 🧠 Engagement de la audiencia
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <!-- 🧠 Engagement -->
+            <section class="card-bg border border-white/10 p-8 rounded-3xl">
+                <h2 class="text-lg font-black text-white mb-8 flex items-center">
+                    <i data-lucide="brain-circuit" class="mr-3 text-cyan w-5 h-5"></i> 🧠 Engagement de la audiencia
                 </h2>
-                <div class="space-y-6" id="engagement-list">
-                    <!-- Se llena con JS para mantener el código HTML limpio -->
-                </div>
+                <div class="space-y-6" id="engagement-list"></div>
             </section>
 
-            <section class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 flex flex-col justify-center">
-                <h2 class="text-xl font-bold text-slate-800 mb-10 flex items-center tracking-tight">
-                    <i data-lucide="users" class="mr-3 text-indigo-600"></i> 👥 Perfil de asistentes
+            <!-- 👥 Perfil -->
+            <section class="card-bg border border-white/10 p-8 rounded-3xl flex flex-col">
+                <h2 class="text-lg font-black text-white mb-8 flex items-center">
+                    <i data-lucide="fingerprint" class="mr-3 text-cyan w-5 h-5"></i> 👥 Perfil de asistentes
                 </h2>
-                <div class="space-y-8">
-                    <div class="flex items-center space-x-6 p-6 rounded-3xl bg-rose-50/30 border border-rose-100/50">
-                        <div class="w-16 h-16 bg-rose-100 rounded-2xl flex items-center justify-center text-3xl shadow-inner">👩</div>
+                <div class="flex-1 flex flex-col justify-center space-y-8">
+                    <div class="flex items-center space-x-6 p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <div class="text-3xl bg-white/5 w-16 h-16 flex items-center justify-center rounded-xl">👩</div>
                         <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Mujeres</p>
-                            <h4 class="text-4xl font-black text-slate-800 tracking-tight">~130 <span class="text-lg font-bold text-rose-500 ml-2">(43.3%)</span></h4>
+                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Mujeres</p>
+                            <h4 class="text-3xl font-black text-white tracking-tighter">~130 <span class="text-sm font-bold text-cyan ml-2">43.3%</span></h4>
                         </div>
                     </div>
-                    <div class="flex items-center space-x-6 p-6 rounded-3xl bg-blue-50/30 border border-blue-100/50">
-                        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl shadow-inner">👨</div>
+                    <div class="flex items-center space-x-6 p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <div class="text-3xl bg-white/5 w-16 h-16 flex items-center justify-center rounded-xl">👨</div>
                         <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Hombres</p>
-                            <h4 class="text-4xl font-black text-slate-800 tracking-tight">~136 <span class="text-lg font-bold text-blue-500 ml-2">(45.3%)</span></h4>
+                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Hombres</p>
+                            <h4 class="text-3xl font-black text-white tracking-tighter">~136 <span class="text-sm font-bold text-cyan ml-2">45.3%</span></h4>
                         </div>
                     </div>
                 </div>
@@ -168,76 +195,71 @@
         </div>
 
         <!-- 🎯 Empresas ICP -->
-        <section class="bg-white rounded-[2.5rem] shadow-sm border border-slate-200 overflow-hidden">
-            <div class="bg-slate-900 p-8 text-white">
-                <h2 class="text-2xl font-bold flex items-center tracking-tight">
-                    <i data-lucide="target" class="mr-3 text-[#00dfd8]"></i> 🎯 Empresas ICP (registro vs asistencia)
+        <section class="card-bg border border-white/10 rounded-3xl overflow-hidden mb-12">
+            <div class="bg-white/5 p-8 border-b border-white/10">
+                <h2 class="text-lg font-black flex items-center text-white uppercase tracking-widest">
+                    <i data-lucide="crosshair" class="mr-3 text-cyan"></i> 🎯 Empresas ICP (registro vs asistencia)
                 </h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2">
-                <div class="p-8 border-r border-slate-100">
-                    <div class="flex items-center text-emerald-600 mb-6 bg-emerald-50 w-fit px-4 py-2 rounded-full font-bold text-sm border border-emerald-100">
-                        <i data-lucide="check-circle-2" class="mr-2 w-4 h-4"></i> ✅ Asistieron (14) — 37.8% del ICP
+                <div class="p-8 border-r border-white/10">
+                    <div class="flex items-center text-emerald-400 mb-6 font-bold text-xs uppercase tracking-widest">
+                        <i data-lucide="shield-check" class="mr-2 w-4 h-4"></i> ✅ Asistieron (14) — 37.8% del ICP
                     </div>
                     <div class="space-y-2" id="attended-list"></div>
                 </div>
-                <div class="p-8 bg-slate-50/50">
-                    <div class="flex items-center text-rose-600 mb-6 bg-rose-50 w-fit px-4 py-2 rounded-full font-bold text-sm border border-rose-100">
-                        <i data-lucide="x-circle" class="mr-2 w-4 h-4"></i> ❌ No asistieron (23) — 62.2% del ICP
+                <div class="p-8 bg-black/20">
+                    <div class="flex items-center text-rose-500 mb-6 font-bold text-xs uppercase tracking-widest">
+                        <i data-lucide="shield-alert" class="mr-2 w-4 h-4"></i> ❌ No asistieron (23) — 62.2% del ICP
                     </div>
-                    <div class="grid grid-cols-1 gap-2.5 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar" id="not-attended-list"></div>
+                    <div class="grid grid-cols-1 gap-2.5 max-h-[350px] overflow-y-auto pr-4 custom-scrollbar" id="not-attended-list"></div>
                 </div>
             </div>
         </section>
 
-        <!-- 💬 Interacción -->
-        <section class="space-y-6">
-            <div class="bg-gradient-to-r from-[#0f172a] to-[#1e293b] p-10 rounded-[2.5rem] text-white flex flex-col md:flex-row items-center justify-between shadow-xl border-b-4 border-indigo-500">
-                <div class="text-center md:text-left mb-6 md:mb-0">
-                    <h2 class="text-3xl font-black flex items-center justify-center md:justify-start tracking-tight">
-                        <i data-lucide="message-square" class="mr-4 text-[#00dfd8]"></i> 💬 Interacción en vivo
-                    </h2>
-                    <p class="text-slate-400 text-lg mt-2 font-medium">Más de 60 consultas en el chat 💥</p>
-                </div>
-                <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl text-center min-w-[200px]">
-                    <span class="block text-6xl font-black text-white tracking-tighter">+60</span>
-                    <span class="text-xs font-black uppercase tracking-[0.3em] text-[#00dfd8]">Preguntas</span>
+        <!-- 💬 Interacción y Preguntas -->
+        <section class="space-y-6 mb-12">
+            <div class="bg-cyan p-1 rounded-3xl">
+                <div class="bg-slate-950 p-10 rounded-[calc(1.5rem-1px)] text-white flex flex-col md:flex-row items-center justify-between">
+                    <div class="text-center md:text-left mb-6 md:mb-0">
+                        <h2 class="text-2xl font-black flex items-center justify-center md:justify-start">
+                            <i data-lucide="cpu" class="mr-4 text-cyan"></i> 💬 Interacción en vivo
+                        </h2>
+                        <p class="text-slate-400 mt-2">Insights extraídos de más de 60 consultas en el chat 💥</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-6xl font-black text-white tracking-tighter">+60</span>
+                        <span class="text-[10px] font-black uppercase tracking-widest text-cyan">Preguntas Ejecutivas</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 gap-8">
-                <h3 class="text-2xl font-bold text-slate-800 flex items-center px-2 tracking-tight">
-                    <i data-lucide="help-circle" class="mr-3 text-indigo-600"></i> ❓ Preguntas más relevantes del webinar
-                </h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="questions-container">
-                    <!-- Se llena con JS -->
-                </div>
-            </div>
+            <div id="questions-container" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
         </section>
 
         <!-- 🔥 Lectura Estratégica Final -->
-        <section class="bg-[#0f172a] rounded-[3rem] p-12 text-white shadow-2xl relative overflow-hidden border-t-8 border-indigo-600">
-            <div class="absolute right-[-5%] top-[-5%] opacity-5">
-                <i data-lucide="award" class="w-96 h-96"></i>
-            </div>
-            <div class="relative z-10">
-                <h2 class="text-3xl font-black mb-12 flex items-center tracking-tight">
-                    <i data-lucide="award" class="mr-4 text-amber-400"></i> 🔥 Lectura estratégica final
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12" id="final-strategy"></div>
+        <section class="bg-white p-1 rounded-[3rem]">
+            <div class="bg-[#020617] rounded-[calc(3rem-1px)] p-12 text-white relative overflow-hidden">
+                <div class="absolute right-[-5%] top-[-5%] opacity-5">
+                    <i data-lucide="rocket" class="w-96 h-96"></i>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-black mb-12 flex items-center tracking-tight">
+                        <i data-lucide="layers" class="mr-4 text-cyan w-6 h-6"></i> 🔥 LECTURA ESTRATÉGICA FINAL
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10" id="final-strategy"></div>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="max-w-6xl mx-auto px-6 mt-20 border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center opacity-60">
-        <p class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 mb-4 md:mb-0 text-center">Documento Confidencial • Webinar UKG | Ataway</p>
-        <p class="text-[10px] font-black text-slate-500">© 2024 Analytics Dashboard • Powered by Strategy</p>
+    <footer class="max-w-6xl mx-auto px-6 mt-10 pb-10 flex flex-col md:flex-row justify-between items-center opacity-40 border-t border-white/5 pt-8">
+        <p class="text-[9px] font-black uppercase tracking-[0.5em] text-slate-500 mb-4 md:mb-0">Confidential Report • WFM Strategy Insights</p>
+        <p class="text-[9px] font-black text-slate-500">UKG | ATAWAY | MTI DATA ANALYSIS © 2024</p>
     </footer>
 
     <script>
-        // Datos e Inyección Dinámica
         const icpAttended = [
             "Cantu Inc", "China in Box", "Coco Bambu", "DESPACON", "Electrolux", "EQTL SERVICOS", 
             "Equatorial Energia", "Ferragens Negrão Comercial", "GPA", "Grupo Profarma", 
@@ -254,10 +276,10 @@
 
         const engagement = [
             { icon: "🥇", label: "Más de 100 minutos (Muy alto interés)", val: "9 personas", perc: "3.0%", color: "bg-emerald-500" },
-            { icon: "🥈", label: "61 a 100 minutos (Alto interés)", val: "177 personas", perc: "59.0%", color: "bg-indigo-600" },
-            { icon: "🥉", label: "31 a 60 minutos (Interés medio)", val: "48 personas", perc: "16.0%", color: "bg-amber-400" },
-            { icon: "🚶", label: "10 a 30 minutos (Bajo interés)", val: "31 personas", perc: "10.3%", color: "bg-slate-400" },
-            { icon: "🚪", label: "Menos de 10 minutos (Salidas)", val: "35 personas", perc: "11.7%", color: "bg-rose-400" }
+            { icon: "🥈", label: "61 a 100 minutos (Alto interés)", val: "177 personas", perc: "59.0%", color: "bg-cyan" },
+            { icon: "🥉", label: "31 a 60 minutos (Interés medio)", val: "48 personas", perc: "16.0%", color: "bg-amber-500" },
+            { icon: "🚶", label: "10 a 30 minutos (Bajo interés / Curiosos)", val: "31 personas", perc: "10.3%", color: "bg-slate-600" },
+            { icon: "🚪", label: "Menos de 10 minutos (Entraron y salieron)", val: "35 personas", perc: "11.7%", color: "bg-rose-500" }
         ];
 
         const questions = [
@@ -290,10 +312,10 @@
             {
                 title: "⚖️ Marco legal y regulación",
                 items: [
-                    "¿Menciona el proyecto de ley algo sobre medidas complementarias o implementaciones por fases?",
-                    "¿Esto afecta a algún límite en el tiempo de descanso?",
-                    "¿Habrá algún cambio en el descanso durante la jornada laboral?",
-                    "Una vez implementado el horario 5x2, ¿podrán las empresas negociar con los sindicatos?",
+                    "¿Menciona el proyecto de ley algo sobre medidas complementarias o implementaciones por fases, como fue el caso del salario mínimo nacional para la enfermería?",
+                    "¿Esto afecta a algún límite en el tiempo de descanso en relación con el número de horas trabajadas por día?",
+                    "¿Habrá algún cambio en el descanso durante la jornada laboral, que ahora está limitado a 4 horas?",
+                    "Una vez implementado el horario de trabajo 5x2, ¿podrán las empresas negociar con los sindicatos?",
                     "¿Hasta qué punto pueden utilizarse los acuerdos individuales?",
                     "¿Qué hacemos con NR1 en este escenario?"
                 ]
@@ -301,67 +323,65 @@
         ];
 
         const strategy = [
-            { icon: "💪", label: "Participación", desc: "Tasa de asistencia muy alta (79.8%)" },
-            { icon: "🎯", label: "Alcance ICP", desc: "21.5% de empresas ICP" },
-            { icon: "🚀", label: "Conversión ICP", desc: "37.8% del ICP asistió" },
-            { icon: "📊", label: "Retención", desc: "Engagement muy alto (+60% > 1h)" },
-            { icon: "💬", label: "Interés de Mercado", desc: "+60 preguntas → necesidades reales del mercado" },
-            { icon: "⚠️", label: "Acción Inmediata", desc: "23 empresas ICP no asistieron → oportunidad directa de follow-up", alert: true }
+            { icon: "shield-check", label: "Participación", desc: "Tasa de asistencia muy alta (79.8%)" },
+            { icon: "target", label: "Alcance ICP", desc: "21.5% de empresas ICP dentro de la base" },
+            { icon: "trending-up", label: "Conversión ICP", desc: "37.8% del ICP asistió (14/37 empresas)" },
+            { icon: "bar-chart", label: "Retención", desc: "Engagement muy alto (+60% > 1h)" },
+            { icon: "messages-square", label: "Interés", desc: "+60 preguntas → necesidades reales del mercado" },
+            { icon: "alert-triangle", label: "Follow-up", desc: "23 empresas ICP no asistieron → oportunidad directa de follow-up", alert: true }
         ];
 
-        // Renderizar Engagement
+        // Renders
         document.getElementById('engagement-list').innerHTML = engagement.map(item => `
             <div class="group">
                 <div class="flex justify-between items-center mb-2">
-                    <span class="text-sm font-bold text-slate-700">${item.icon} ${item.label}</span>
-                    <span class="text-xs font-black text-slate-500">${item.val} (${item.perc})</span>
+                    <span class="text-[11px] font-bold text-slate-300">${item.icon} ${item.label}</span>
+                    <span class="text-[10px] font-black text-slate-500">${item.val} (${item.perc})</span>
                 </div>
-                <div class="h-2.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
                     <div class="h-full ${item.color} rounded-full" style="width: ${item.perc}"></div>
                 </div>
             </div>
         `).join('');
 
-        // Renderizar ICPs
         document.getElementById('attended-list').innerHTML = icpAttended.map(name => `
-            <div class="flex items-center text-slate-700 text-sm font-semibold py-1.5 transition-transform hover:translate-x-1">
-                <div class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></div> ${name}
+            <div class="flex items-center text-slate-300 text-[11px] font-semibold py-1.5 border-b border-white/5 last:border-0">
+                <i data-lucide="chevron-right" class="w-3 h-3 text-emerald-500 mr-2"></i> ${name}
             </div>
         `).join('');
 
         document.getElementById('not-attended-list').innerHTML = icpNotAttended.map(name => `
-            <div class="bg-white p-3 rounded-xl border border-slate-200 text-slate-600 text-xs font-bold shadow-sm mb-2">
+            <div class="bg-white/5 p-3 rounded-lg border border-white/5 text-slate-400 text-[10px] font-bold mb-2">
                 ${name}
             </div>
         `).join('');
 
-        // Renderizar Preguntas
         document.getElementById('questions-container').innerHTML = questions.map(cat => `
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                <h4 class="font-black uppercase tracking-widest text-[10px] text-indigo-600 mb-6">${cat.title}</h4>
+            <div class="bg-white/5 border border-white/10 p-8 rounded-3xl">
+                <h4 class="font-black uppercase tracking-[0.2em] text-[9px] text-cyan mb-6">${cat.title}</h4>
                 <div class="space-y-4">
                     ${cat.items.map(q => `
                         <div class="flex space-x-3 group">
-                            <i data-lucide="arrow-right" class="mt-1 text-[#00dfd8] w-4 h-4 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                            <p class="text-sm text-slate-600 leading-relaxed italic font-medium">"${q}"</p>
+                            <i data-lucide="minus" class="mt-1 text-cyan w-3 h-3 shrink-0"></i>
+                            <p class="text-[11px] text-slate-400 leading-relaxed italic font-medium">"${q}"</p>
                         </div>
                     `).join('')}
                 </div>
             </div>
         `).join('');
 
-        // Renderizar Estrategia
         document.getElementById('final-strategy').innerHTML = strategy.map(item => `
-            <div class="flex items-start space-x-5 ${item.alert ? 'bg-rose-500/10 p-6 rounded-[2rem] border border-rose-500/20' : ''}">
-                <div class="w-12 h-12 ${item.alert ? 'bg-rose-500/20' : 'bg-white/5'} rounded-2xl flex items-center justify-center shrink-0 border border-white/10 text-2xl">${item.icon}</div>
+            <div class="flex items-start space-x-5">
+                <div class="w-10 h-10 ${item.alert ? 'bg-rose-500 text-white' : 'bg-white/5 text-cyan'} rounded-xl flex items-center justify-center shrink-0 border border-white/10">
+                    <i data-lucide="${item.icon}" class="w-5 h-5"></i>
+                </div>
                 <div>
-                    <h5 class="font-black text-[#00dfd8] mb-1 uppercase tracking-wider text-[10px]">${item.label}</h5>
-                    <p class="${item.alert ? 'text-white font-bold' : 'text-slate-200'} text-base font-medium">${item.desc}</p>
+                    <h5 class="font-black text-slate-500 mb-1 uppercase tracking-widest text-[9px]">${item.label}</h5>
+                    <p class="text-sm font-bold text-white leading-tight">${item.desc}</p>
                 </div>
             </div>
         `).join('');
 
-        // Inicializar Iconos
         lucide.createIcons();
     </script>
 </body>
