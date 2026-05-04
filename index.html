@@ -1,457 +1,368 @@
-import React from 'react';
-import { 
-  Users, 
-  Target, 
-  Clock, 
-  MessageSquare, 
-  TrendingUp, 
-  CheckCircle2, 
-  XCircle, 
-  UserCheck, 
-  Building2,
-  HelpCircle,
-  Briefcase,
-  Scale,
-  DollarSign,
-  Store,
-  ChevronRight,
-  Zap,
-  BarChart3,
-  Award,
-  ArrowRight,
-  Calendar
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Ejecutivo Webinar - UKG | Ataway</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 selection:bg-indigo-100">
 
-const App = () => {
-  // Dados do ICP (Información original sin omitir nada)
-  const icpAttended = [
-    "Cantu Inc", "China in Box", "Coco Bambu", "DESPACON", "Electrolux", "EQTL SERVICOS", 
-    "Equatorial Energia", "Ferragens Negrão Comercial", "GPA", "Grupo Profarma", 
-    "Inditex", "McDonald's", "Rede Dom Pedro de Postos", "Super Lagoa - MWN COMERCIAL DE ALIMENTOS LTDA"
-  ];
-
-  const icpNotAttended = [
-    "Azul Linhas Aereas Brasileiras - AD", "Daimler Truck Brasil", "Dasa Laboratorios Médicos", 
-    "Eurofarma Laboratórios", "Farma Conde", "Fogo de Chão", "Grupo Fit", "Grupo HDI", 
-    "Grupo IMC", "Grupo Muffato", "HNT", "Hortifruti", "IMC", "Jamef", "JHSF", "Lactalis", 
-    "Lactalis Do Brasil", "Neoenergia", "Nestle Ltda", "Studio Z", "Te connectivity", "UPS", 
-    "Vulcabras - Ce Calçados e Artigos Esportivos SA"
-  ];
-
-  return (
-    <div className="min-h-screen bg-[#f8fafc] font-sans text-slate-900 pb-20 selection:bg-indigo-100">
-      
-      {/* Banner de Capa Replicado con Logo MTI */}
-      <div className="bg-[#0f172a] text-white overflow-hidden relative border-b-4 border-[#00dfd8]">
-        {/* Contenedor Superior Derecho para Logo MTI */}
-        <div className="absolute top-6 right-6 z-20">
-          <div className="bg-white/10 backdrop-blur-md p-2 rounded-xl border border-white/10 w-24 h-24 flex items-center justify-center overflow-hidden">
-            <img 
-              src="mti-logo.png" 
-              alt="MTI Logo" 
-              className="max-w-full max-h-full object-contain"
-              onError={(e) => { e.target.style.display = 'none'; }}
-            />
-          </div>
+    <!-- Hero Banner con Logo MTI -->
+    <header class="bg-[#0f172a] text-white overflow-hidden relative border-b-4 border-[#00dfd8]">
+        <!-- Contenedor Logo MTI (Superior Derecho) -->
+        <div class="absolute top-6 right-6 z-20">
+            <div class="glass p-2 rounded-xl border border-white/10 w-24 h-24 flex items-center justify-center overflow-hidden">
+                <img src="mti-logo.png" alt="MTI Logo" class="max-w-full max-h-full object-contain" onerror="this.parentElement.style.display='none'">
+            </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
-          <div className="flex-1 z-10">
-            <div className="flex items-center space-x-4 mb-8">
-              <span className="bg-[#00dfd8] text-[#0f172a] px-3 py-1 rounded text-xs font-black uppercase tracking-widest">Webinar</span>
-              <div className="flex items-center space-x-2 text-xl font-bold">
-                <span className="text-white">UKG</span>
-                <span className="text-slate-500">|</span>
-                <span className="text-white lowercase">ataway</span>
-              </div>
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8">
-              Fim da escala 6x1, redução da jornada de trabalho e o futuro da gestão de talentos no Brasil
-            </h1>
-            <div className="flex flex-wrap gap-6 mb-8 text-slate-300">
-              <div className="flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
-                <Calendar size={18} className="text-[#00dfd8]" />
-                <span className="text-sm font-bold">30 de abril</span>
-              </div>
-              <div className="flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
-                <Clock size={18} className="text-[#00dfd8]" />
-                <span className="text-sm font-bold">11:00 a.m. (BR GMT-3)</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="flex-1 grid grid-cols-2 gap-4 z-10">
-             {/* Contenedor Foto Natalia Barbieri */}
-             <div className="bg-slate-800/50 p-4 rounded-2xl border border-white/5 text-center flex flex-col items-center">
-                <div className="w-24 h-24 bg-slate-700 rounded-2xl mx-auto mb-3 overflow-hidden border-2 border-[#00dfd8]/30 shadow-lg">
-                  <img 
-                    src="Natalia Barbieri.jpeg" 
-                    alt="Natalia Barbieri" 
-                    className="w-full h-full object-cover"
-                    onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=Natalia'; }}
-                  />
+        <div class="max-w-6xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 z-10">
+                <div class="flex items-center space-x-4 mb-8">
+                    <span class="bg-[#00dfd8] text-[#0f172a] px-3 py-1 rounded text-xs font-black uppercase tracking-widest text-center">Webinar</span>
+                    <div class="flex items-center space-x-2 text-xl font-bold">
+                        <span class="text-white">UKG</span>
+                        <span class="text-slate-500">|</span>
+                        <span class="text-white lowercase">ataway</span>
+                    </div>
                 </div>
-                <p className="text-sm font-bold">Natalia Barbieri</p>
-                <p className="text-[10px] text-slate-400 mt-1 uppercase leading-tight">Head de Operações WFM na Ataway</p>
-             </div>
-
-             {/* Contenedor Foto Andrea */}
-             <div className="bg-slate-800/50 p-4 rounded-2xl border border-white/5 text-center flex flex-col items-center">
-                <div className="w-24 h-24 bg-slate-700 rounded-2xl mx-auto mb-3 overflow-hidden border-2 border-[#00dfd8]/30 shadow-lg">
-                  <img 
-                    src="Andrea.jpg" 
-                    alt="Andrea Tavares" 
-                    className="w-full h-full object-cover"
-                    onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=Andrea'; }}
-                  />
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8">
+                    Fim da escala 6x1, redução da jornada de trabalho e o futuro da gestão de talentos no Brasil
+                </h1>
+                <div class="flex flex-wrap gap-6 mb-8 text-slate-300">
+                    <div class="flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                        <i data-lucide="calendar" class="w-5 h-5 text-[#00dfd8]"></i>
+                        <span class="text-sm font-bold">30 de abril</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                        <i data-lucide="clock" class="w-5 h-5 text-[#00dfd8]"></i>
+                        <span class="text-sm font-bold">11:00 a.m. (BR GMT-3)</span>
+                    </div>
                 </div>
-                <p className="text-sm font-bold">Andrea Tavares</p>
-                <p className="text-[10px] text-slate-400 mt-1 uppercase leading-tight">Advogada Trabalhista Dias Pamplona</p>
-             </div>
-          </div>
-        </div>
-        {/* Elementos decorativos */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#00dfd8]/5 blur-[100px] rounded-full"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/5 blur-[120px] rounded-full"></div>
-      </div>
-
-      <main className="max-w-6xl mx-auto px-6 mt-16 space-y-12">
-        
-        {/* 📊 Resumen General */}
-        <section>
-          <div className="flex items-center space-x-3 mb-6">
-            <div className="bg-slate-900 p-2 rounded-lg text-white">
-              <Zap size={20} />
             </div>
-            <h2 className="text-2xl font-bold text-slate-800 tracking-tight">📊 Resumen General del Webinar</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-indigo-300 transition-all hover:shadow-md">
-              <p className="text-slate-500 font-bold text-sm uppercase tracking-wide">Registros totales (contactos)</p>
-              <p className="text-4xl font-black text-slate-900 mt-1 tracking-tighter">366</p>
-            </div>
-            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-indigo-300 transition-all hover:shadow-md">
-              <p className="text-slate-500 font-bold text-sm uppercase tracking-wide">Participantes reales (contactos)</p>
-              <p className="text-4xl font-black text-slate-900 mt-1 tracking-tighter">292</p>
-            </div>
-            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-indigo-300 transition-all hover:shadow-md">
-              <p className="text-slate-500 font-bold text-sm uppercase tracking-wide">Empresas registradas</p>
-              <p className="text-4xl font-black text-slate-900 mt-1 tracking-tighter">172</p>
-            </div>
-          </div>
-        </section>
-
-        {/* 📈 KPIs Clave */}
-        <section className="bg-indigo-600 rounded-[2.5rem] p-10 text-white shadow-xl shadow-indigo-100 relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-8 opacity-10">
-            <TrendingUp size={200} />
-          </div>
-          <div className="relative z-10">
-            <h2 className="text-2xl font-bold mb-8 flex items-center tracking-tight">
-              <TrendingUp className="mr-3" /> 📈 KPIs clave
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl transition-transform hover:scale-[1.02]">
-                <p className="text-indigo-100 font-bold text-xs uppercase tracking-widest mb-2">🔹 1. Tasa de participación (contactos)</p>
-                <p className="text-4xl font-black tracking-tighter">79.8%</p>
-                <p className="text-indigo-200 text-sm mt-1 font-medium italic">292 / 366</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl transition-transform hover:scale-[1.02]">
-                <p className="text-indigo-100 font-bold text-xs uppercase tracking-widest mb-2">🔹 2. Empresas ICP dentro de la base</p>
-                <p className="text-4xl font-black tracking-tighter">21.5%</p>
-                <p className="text-indigo-200 text-sm mt-1 font-medium italic">37 / 172 (37 confirmadas)</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl transition-transform hover:scale-[1.02]">
-                <p className="text-indigo-100 font-bold text-xs uppercase tracking-widest mb-2">🔹 3. Tasa de asistencia de empresas ICP</p>
-                <p className="text-4xl font-black tracking-tighter">37.8%</p>
-                <p className="text-indigo-200 text-sm mt-1 font-medium italic">14 asistentes / 37 registradas</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Engagement & Perfil */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <section className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200">
-            <h2 className="text-xl font-bold text-slate-800 mb-8 flex items-center tracking-tight">
-              <Clock className="mr-3 text-indigo-600" /> 🧠 Engagement de la audiencia
-            </h2>
-            <div className="space-y-6">
-              {[
-                { icon: "🥇", label: "Más de 100 minutos (Muy alto interés)", val: "9 personas", perc: "3.0%", color: "bg-emerald-500" },
-                { icon: "🥈", label: "61 a 100 minutos (Alto interés)", val: "177 personas", perc: "59.0%", color: "bg-indigo-600" },
-                { icon: "🥉", label: "31 a 60 minutos (Interés medio)", val: "48 personas", perc: "16.0%", color: "bg-amber-400" },
-                { icon: "🚶", label: "10 a 30 minutos (Bajo interés)", val: "31 personas", perc: "10.3%", color: "bg-slate-400" },
-                { icon: "🚪", label: "Menos de 10 minutos (Salidas)", val: "35 personas", perc: "11.7%", color: "bg-rose-400" }
-              ].map((item, idx) => (
-                <div key={idx} className="group">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-bold text-slate-700">{item.icon} {item.label}</span>
-                    <span className="text-xs font-black text-slate-500">{item.val} ({item.perc})</span>
-                  </div>
-                  <div className="h-2.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                    <div className={`h-full ${item.color} rounded-full transition-all duration-500`} style={{ width: item.perc }}></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 flex flex-col justify-center">
-            <h2 className="text-xl font-bold text-slate-800 mb-10 flex items-center tracking-tight">
-              <Users className="mr-3 text-indigo-600" /> 👥 Perfil de asistentes
-            </h2>
-            <div className="space-y-8">
-              <div className="flex items-center space-x-6 p-6 rounded-3xl bg-rose-50/30 border border-rose-100/50">
-                <div className="w-16 h-16 bg-rose-100 rounded-2xl flex items-center justify-center text-3xl shadow-inner">👩</div>
-                <div>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Mujeres</p>
-                  <h4 className="text-4xl font-black text-slate-800 tracking-tight">~130 <span className="text-lg font-bold text-rose-500 ml-2">(43.3%)</span></h4>
-                </div>
-              </div>
-              <div className="flex items-center space-x-6 p-6 rounded-3xl bg-blue-50/30 border border-blue-100/50">
-                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl shadow-inner">👨</div>
-                <div>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Hombres</p>
-                  <h4 className="text-4xl font-black text-slate-800 tracking-tight">~136 <span className="text-lg font-bold text-blue-500 ml-2">(45.3%)</span></h4>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        {/* 🎯 Empresas ICP */}
-        <section className="bg-white rounded-[2.5rem] shadow-sm border border-slate-200 overflow-hidden">
-          <div className="bg-slate-900 p-8 text-white">
-            <h2 className="text-2xl font-bold flex items-center tracking-tight">
-              <Target className="mr-3 text-[#00dfd8]" /> 🎯 Empresas ICP (registro vs asistencia)
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="p-8 border-r border-slate-100">
-              <div className="flex items-center text-emerald-600 mb-6 bg-emerald-50 w-fit px-4 py-2 rounded-full font-bold text-sm border border-emerald-100">
-                <CheckCircle2 size={16} className="mr-2" /> ✅ Asistieron (14) — 37.8% del ICP
-              </div>
-              <div className="space-y-2">
-                {icpAttended.map((name, i) => (
-                  <div key={i} className="flex items-center text-slate-700 text-sm font-semibold py-1.5 transition-transform hover:translate-x-1">
-                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3 shadow-sm shadow-emerald-200"></div> {name}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="p-8 bg-slate-50/50">
-              <div className="flex items-center text-rose-600 mb-6 bg-rose-50 w-fit px-4 py-2 rounded-full font-bold text-sm border border-rose-100">
-                <XCircle size={16} className="mr-2" /> ❌ No asistieron (23) — 62.2% del ICP
-              </div>
-              <div className="grid grid-cols-1 gap-2.5 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar">
-                {icpNotAttended.map((name, i) => (
-                  <div key={i} className="bg-white p-3 rounded-xl border border-slate-200 text-slate-600 text-xs font-bold shadow-sm hover:border-rose-200 transition-colors">
-                    {name}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 💬 Interacción */}
-        <section className="space-y-6">
-          <div className="bg-gradient-to-r from-[#0f172a] to-[#1e293b] p-10 rounded-[2.5rem] text-white flex flex-col md:flex-row items-center justify-between shadow-xl border-b-4 border-indigo-500">
-            <div className="text-center md:text-left mb-6 md:mb-0">
-              <h2 className="text-3xl font-black flex items-center justify-center md:justify-start tracking-tight">
-                <MessageSquare className="mr-4 text-[#00dfd8]" /> 💬 Interacción en vivo
-              </h2>
-              <p className="text-slate-400 text-lg mt-2 font-medium">Más de 60 consultas en el chat 💥</p>
-            </div>
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl text-center min-w-[200px]">
-              <span className="block text-6xl font-black text-white tracking-tighter">+60</span>
-              <span className="text-xs font-black uppercase tracking-[0.3em] text-[#00dfd8]">Preguntas</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8">
-            <h3 className="text-2xl font-bold text-slate-800 flex items-center px-2 tracking-tight">
-              <HelpCircle className="mr-3 text-indigo-600" /> ❓ Preguntas más relevantes del webinar
-            </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Categorías de Preguntas (Exactamente como se compartieron) */}
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center space-x-3 mb-6 text-indigo-600">
-                  <div className="bg-indigo-50 p-2 rounded-lg"><Briefcase size={18} /></div>
-                  <h4 className="font-black uppercase tracking-widest text-[10px]">🏢 Operación y turnos</h4>
+            <div class="flex-1 grid grid-cols-2 gap-4 z-10">
+                <!-- Foto Natalia Barbieri -->
+                <div class="bg-slate-800/50 p-4 rounded-2xl border border-white/5 text-center flex flex-col items-center">
+                    <div class="w-24 h-24 bg-slate-700 rounded-2xl mx-auto mb-3 overflow-hidden border-2 border-[#00dfd8]/30 shadow-lg">
+                        <img src="Natalia Barbieri.jpeg" alt="Natalia Barbieri" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=Natalia'">
+                    </div>
+                    <p class="text-sm font-bold">Natalia Barbieri</p>
+                    <p class="text-[10px] text-slate-400 mt-1 uppercase leading-tight">Head de Operações WFM na Ataway</p>
                 </div>
-                <div className="space-y-4">
-                  {[
+
+                <!-- Foto Andrea -->
+                <div class="bg-slate-800/50 p-4 rounded-2xl border border-white/5 text-center flex flex-col items-center">
+                    <div class="w-24 h-24 bg-slate-700 rounded-2xl mx-auto mb-3 overflow-hidden border-2 border-[#00dfd8]/30 shadow-lg">
+                        <img src="Andrea.jpg" alt="Andrea Tavares" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=Andrea'">
+                    </div>
+                    <p class="text-sm font-bold">Andrea Tavares</p>
+                    <p class="text-[10px] text-slate-400 mt-1 uppercase leading-tight">Advogada Trabalhista Dias Pamplona</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorativos de fondo -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-[#00dfd8]/5 blur-[100px] rounded-full"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/5 blur-[120px] rounded-full"></div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 mt-16 space-y-12">
+        
+        <!-- 📊 Resumen General -->
+        <section>
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-slate-900 p-2 rounded-lg text-white">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-800 tracking-tight">📊 Resumen General del Webinar</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-indigo-300 transition-all hover:shadow-md">
+                    <p class="text-slate-500 font-bold text-sm uppercase tracking-wide">Registros totales (contactos)</p>
+                    <p class="text-4xl font-black text-slate-900 mt-1 tracking-tighter">366</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-indigo-300 transition-all hover:shadow-md">
+                    <p class="text-slate-500 font-bold text-sm uppercase tracking-wide">Participantes reales (contactos)</p>
+                    <p class="text-4xl font-black text-slate-900 mt-1 tracking-tighter">292</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-indigo-300 transition-all hover:shadow-md">
+                    <p class="text-slate-500 font-bold text-sm uppercase tracking-wide">Empresas registradas</p>
+                    <p class="text-4xl font-black text-slate-900 mt-1 tracking-tighter">172</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📈 KPIs Clave -->
+        <section class="bg-indigo-600 rounded-[2.5rem] p-10 text-white shadow-xl shadow-indigo-100 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10">
+                <i data-lucide="trending-up" class="w-48 h-48"></i>
+            </div>
+            <div class="relative z-10">
+                <h2 class="text-2xl font-bold mb-8 flex items-center tracking-tight">
+                    <i data-lucide="trending-up" class="mr-3"></i> 📈 KPIs clave
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
+                        <p class="text-indigo-100 font-bold text-xs uppercase tracking-widest mb-2">🔹 1. Tasa de participación (contactos)</p>
+                        <p class="text-4xl font-black tracking-tighter">79.8%</p>
+                        <p class="text-indigo-200 text-sm mt-1 font-medium italic">292 / 366</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
+                        <p class="text-indigo-100 font-bold text-xs uppercase tracking-widest mb-2">🔹 2. Empresas ICP dentro de la base</p>
+                        <p class="text-4xl font-black tracking-tighter">21.5%</p>
+                        <p class="text-indigo-200 text-sm mt-1 font-medium italic">37 / 172 (37 confirmadas)</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
+                        <p class="text-indigo-100 font-bold text-xs uppercase tracking-widest mb-2">🔹 3. Tasa de asistencia de empresas ICP</p>
+                        <p class="text-4xl font-black tracking-tighter">37.8%</p>
+                        <p class="text-indigo-200 text-sm mt-1 font-medium italic">14 asistentes / 37 registradas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engagement y Perfil -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <section class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200">
+                <h2 class="text-xl font-bold text-slate-800 mb-8 flex items-center tracking-tight">
+                    <i data-lucide="clock" class="mr-3 text-indigo-600"></i> 🧠 Engagement de la audiencia
+                </h2>
+                <div class="space-y-6" id="engagement-list">
+                    <!-- Se llena con JS para mantener el código HTML limpio -->
+                </div>
+            </section>
+
+            <section class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 flex flex-col justify-center">
+                <h2 class="text-xl font-bold text-slate-800 mb-10 flex items-center tracking-tight">
+                    <i data-lucide="users" class="mr-3 text-indigo-600"></i> 👥 Perfil de asistentes
+                </h2>
+                <div class="space-y-8">
+                    <div class="flex items-center space-x-6 p-6 rounded-3xl bg-rose-50/30 border border-rose-100/50">
+                        <div class="w-16 h-16 bg-rose-100 rounded-2xl flex items-center justify-center text-3xl shadow-inner">👩</div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Mujeres</p>
+                            <h4 class="text-4xl font-black text-slate-800 tracking-tight">~130 <span class="text-lg font-bold text-rose-500 ml-2">(43.3%)</span></h4>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-6 p-6 rounded-3xl bg-blue-50/30 border border-blue-100/50">
+                        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl shadow-inner">👨</div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Hombres</p>
+                            <h4 class="text-4xl font-black text-slate-800 tracking-tight">~136 <span class="text-lg font-bold text-blue-500 ml-2">(45.3%)</span></h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 🎯 Empresas ICP -->
+        <section class="bg-white rounded-[2.5rem] shadow-sm border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 p-8 text-white">
+                <h2 class="text-2xl font-bold flex items-center tracking-tight">
+                    <i data-lucide="target" class="mr-3 text-[#00dfd8]"></i> 🎯 Empresas ICP (registro vs asistencia)
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-8 border-r border-slate-100">
+                    <div class="flex items-center text-emerald-600 mb-6 bg-emerald-50 w-fit px-4 py-2 rounded-full font-bold text-sm border border-emerald-100">
+                        <i data-lucide="check-circle-2" class="mr-2 w-4 h-4"></i> ✅ Asistieron (14) — 37.8% del ICP
+                    </div>
+                    <div class="space-y-2" id="attended-list"></div>
+                </div>
+                <div class="p-8 bg-slate-50/50">
+                    <div class="flex items-center text-rose-600 mb-6 bg-rose-50 w-fit px-4 py-2 rounded-full font-bold text-sm border border-rose-100">
+                        <i data-lucide="x-circle" class="mr-2 w-4 h-4"></i> ❌ No asistieron (23) — 62.2% del ICP
+                    </div>
+                    <div class="grid grid-cols-1 gap-2.5 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar" id="not-attended-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 💬 Interacción -->
+        <section class="space-y-6">
+            <div class="bg-gradient-to-r from-[#0f172a] to-[#1e293b] p-10 rounded-[2.5rem] text-white flex flex-col md:flex-row items-center justify-between shadow-xl border-b-4 border-indigo-500">
+                <div class="text-center md:text-left mb-6 md:mb-0">
+                    <h2 class="text-3xl font-black flex items-center justify-center md:justify-start tracking-tight">
+                        <i data-lucide="message-square" class="mr-4 text-[#00dfd8]"></i> 💬 Interacción en vivo
+                    </h2>
+                    <p class="text-slate-400 text-lg mt-2 font-medium">Más de 60 consultas en el chat 💥</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl text-center min-w-[200px]">
+                    <span class="block text-6xl font-black text-white tracking-tighter">+60</span>
+                    <span class="text-xs font-black uppercase tracking-[0.3em] text-[#00dfd8]">Preguntas</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-8">
+                <h3 class="text-2xl font-bold text-slate-800 flex items-center px-2 tracking-tight">
+                    <i data-lucide="help-circle" class="mr-3 text-indigo-600"></i> ❓ Preguntas más relevantes del webinar
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="questions-container">
+                    <!-- Se llena con JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 🔥 Lectura Estratégica Final -->
+        <section class="bg-[#0f172a] rounded-[3rem] p-12 text-white shadow-2xl relative overflow-hidden border-t-8 border-indigo-600">
+            <div class="absolute right-[-5%] top-[-5%] opacity-5">
+                <i data-lucide="award" class="w-96 h-96"></i>
+            </div>
+            <div class="relative z-10">
+                <h2 class="text-3xl font-black mb-12 flex items-center tracking-tight">
+                    <i data-lucide="award" class="mr-4 text-amber-400"></i> 🔥 Lectura estratégica final
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12" id="final-strategy"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="max-w-6xl mx-auto px-6 mt-20 border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center opacity-60">
+        <p class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 mb-4 md:mb-0 text-center">Documento Confidencial • Webinar UKG | Ataway</p>
+        <p class="text-[10px] font-black text-slate-500">© 2024 Analytics Dashboard • Powered by Strategy</p>
+    </footer>
+
+    <script>
+        // Datos e Inyección Dinámica
+        const icpAttended = [
+            "Cantu Inc", "China in Box", "Coco Bambu", "DESPACON", "Electrolux", "EQTL SERVICOS", 
+            "Equatorial Energia", "Ferragens Negrão Comercial", "GPA", "Grupo Profarma", 
+            "Inditex", "McDonald's", "Rede Dom Pedro de Postos", "Super Lagoa - MWN COMERCIAL DE ALIMENTOS LTDA"
+        ];
+
+        const icpNotAttended = [
+            "Azul Linhas Aereas Brasileiras - AD", "Daimler Truck Brasil", "Dasa Laboratorios Médicos", 
+            "Eurofarma Laboratórios", "Farma Conde", "Fogo de Chão", "Grupo Fit", "Grupo HDI", 
+            "Grupo IMC", "Grupo Muffato", "HNT", "Hortifruti", "IMC", "Jamef", "JHSF", "Lactalis", 
+            "Lactalis Do Brasil", "Neoenergia", "Nestle Ltda", "Studio Z", "Te connectivity", "UPS", 
+            "Vulcabras - Ce Calçados e Artigos Esportivos SA"
+        ];
+
+        const engagement = [
+            { icon: "🥇", label: "Más de 100 minutos (Muy alto interés)", val: "9 personas", perc: "3.0%", color: "bg-emerald-500" },
+            { icon: "🥈", label: "61 a 100 minutos (Alto interés)", val: "177 personas", perc: "59.0%", color: "bg-indigo-600" },
+            { icon: "🥉", label: "31 a 60 minutos (Interés medio)", val: "48 personas", perc: "16.0%", color: "bg-amber-400" },
+            { icon: "🚶", label: "10 a 30 minutos (Bajo interés)", val: "31 personas", perc: "10.3%", color: "bg-slate-400" },
+            { icon: "🚪", label: "Menos de 10 minutos (Salidas)", val: "35 personas", perc: "11.7%", color: "bg-rose-400" }
+        ];
+
+        const questions = [
+            {
+                title: "🏢 Operación y turnos",
+                items: [
                     "¿Cómo podríamos ajustar esto en lo que respecta a los días festivos trabajados?",
                     "¿Seguirá vigente el horario de turnos de 12x36 o sufrirá algún cambio?",
                     "¿Habrá algún cambio en los horarios actuales de 6x1, que ya son de 36 horas semanales?",
                     "¿Se puede proponer un horario de trabajo de 6x2, incluso con 40 horas semanales?",
                     "Tampoco se permitirá el horario 6x2, considerando que en 7 días el empleado no tendría 2 días de descanso."
-                  ].map((q, i) => (
-                    <div key={i} className="flex space-x-3 group">
-                      <ArrowRight size={14} className="mt-1 text-[#00dfd8] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <p className="text-sm text-slate-600 leading-relaxed italic font-medium">"{q}"</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center space-x-3 mb-6 text-indigo-600">
-                   <div className="bg-indigo-50 p-2 rounded-lg"><Clock size={18} /></div>
-                  <h4 className="font-black uppercase tracking-widest text-[10px]">⏱️ Reducción de jornada laboral</h4>
-                </div>
-                <div className="space-y-4">
-                  {[
+                ]
+            },
+            {
+                title: "⏱️ Reducción de jornada laboral",
+                items: [
                     "¿Este cambio también incluye una reducción a una semana laboral de 40 horas?",
                     "¿Es posible reducir la semana laboral de 42 horas en un horario de 5x2 a 40 horas?",
                     "¿Una persona que actualmente trabaja 6 días a la semana y descansa 1 día, pasaría automáticamente a trabajar 5 días a la semana y vería reducidas sus horas de trabajo mensuales a 200?",
                     "Para los nuevos empleados, ¿sería posible ajustar el horario laboral a 220 horas aumentando las horas de trabajo diarias en el modelo 5x2?"
-                  ].map((q, i) => (
-                    <div key={i} className="flex space-x-3 group">
-                      <ArrowRight size={14} className="mt-1 text-[#00dfd8] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <p className="text-sm text-slate-600 leading-relaxed italic font-medium">"{q}"</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center space-x-3 mb-6 text-indigo-600">
-                   <div className="bg-indigo-50 p-2 rounded-lg"><DollarSign size={18} /></div>
-                  <h4 className="font-black uppercase tracking-widest text-[10px]">💰 Costos y estructura</h4>
-                </div>
-                <div className="space-y-4">
-                  {[
+                ]
+            },
+            {
+                title: "💰 Costos y estructura",
+                items: [
                     "¿Cómo podemos implementar este cronograma sin aumentar el número de personal?",
                     "¿Es posible que los sindicatos empiecen a exigir comisiones mínimas o propinas debido a la reducción de salarios?"
-                  ].map((q, i) => (
-                    <div key={i} className="flex space-x-3 group">
-                      <ArrowRight size={14} className="mt-1 text-[#00dfd8] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <p className="text-sm text-slate-600 leading-relaxed italic font-medium">"{q}"</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center space-x-3 mb-6 text-indigo-600">
-                   <div className="bg-indigo-50 p-2 rounded-lg"><Scale size={18} /></div>
-                  <h4 className="font-black uppercase tracking-widest text-[10px]">⚖️ Marco legal y regulación</h4>
-                </div>
-                <div className="space-y-4">
-                  {[
+                ]
+            },
+            {
+                title: "⚖️ Marco legal y regulación",
+                items: [
                     "¿Menciona el proyecto de ley algo sobre medidas complementarias o implementaciones por fases?",
                     "¿Esto afecta a algún límite en el tiempo de descanso?",
                     "¿Habrá algún cambio en el descanso durante la jornada laboral?",
                     "Una vez implementado el horario 5x2, ¿podrán las empresas negociar con los sindicatos?",
                     "¿Hasta qué punto pueden utilizarse los acuerdos individuales?",
                     "¿Qué hacemos con NR1 en este escenario?"
-                  ].map((q, i) => (
-                    <div key={i} className="flex space-x-3 group">
-                      <ArrowRight size={14} className="mt-1 text-[#00dfd8] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <p className="text-sm text-slate-600 leading-relaxed italic font-medium">"{q}"</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                ]
+            }
+        ];
 
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm md:col-span-2">
-                <div className="flex items-center space-x-3 mb-6 text-indigo-600">
-                   <div className="bg-indigo-50 p-2 rounded-lg"><Store size={18} /></div>
-                  <h4 className="font-black uppercase tracking-widest text-[10px]">🏪 Impacto en el negocio</h4>
+        const strategy = [
+            { icon: "💪", label: "Participación", desc: "Tasa de asistencia muy alta (79.8%)" },
+            { icon: "🎯", label: "Alcance ICP", desc: "21.5% de empresas ICP" },
+            { icon: "🚀", label: "Conversión ICP", desc: "37.8% del ICP asistió" },
+            { icon: "📊", label: "Retención", desc: "Engagement muy alto (+60% > 1h)" },
+            { icon: "💬", label: "Interés de Mercado", desc: "+60 preguntas → necesidades reales del mercado" },
+            { icon: "⚠️", label: "Acción Inmediata", desc: "23 empresas ICP no asistieron → oportunidad directa de follow-up", alert: true }
+        ];
+
+        // Renderizar Engagement
+        document.getElementById('engagement-list').innerHTML = engagement.map(item => `
+            <div class="group">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-bold text-slate-700">${item.icon} ${item.label}</span>
+                    <span class="text-xs font-black text-slate-500">${item.val} (${item.perc})</span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {[
-                    "¿Existe algún movimiento entre las asociaciones empresariales para reducir el horario de atención?",
-                    "¿Cómo se vería afectado el horario laboral de los empleados que ya trabajan 5x2 si sus horas bajaran de 44 a 40?"
-                  ].map((q, i) => (
-                    <div key={i} className="flex space-x-3 group">
-                      <ArrowRight size={14} className="mt-1 text-[#00dfd8] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <p className="text-sm text-slate-600 leading-relaxed italic font-medium">"{q}"</p>
-                    </div>
-                  ))}
+                <div class="h-2.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                    <div class="h-full ${item.color} rounded-full" style="width: ${item.perc}"></div>
                 </div>
-              </div>
             </div>
-          </div>
-        </section>
+        `).join('');
 
-        {/* 🔥 Lectura Estratégica Final */}
-        <section className="bg-[#0f172a] rounded-[3rem] p-12 text-white shadow-2xl relative overflow-hidden border-t-8 border-indigo-600">
-          <div className="absolute right-[-5%] top-[-5%] opacity-5">
-             <Award size={400} />
-          </div>
-          <div className="relative z-10">
-            <h2 className="text-3xl font-black mb-12 flex items-center tracking-tight">
-              <Award className="mr-4 text-amber-400" size={32} /> 🔥 Lectura estratégica final
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12">
-              <div className="flex items-start space-x-5 transition-transform hover:translate-x-2">
-                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 border border-white/10 text-2xl shadow-lg">💪</div>
-                <div>
-                  <h5 className="font-black text-[#00dfd8] mb-1 uppercase tracking-wider text-[10px]">Participación</h5>
-                  <p className="text-slate-200 text-base font-medium">Tasa de asistencia muy alta (79.8%)</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-5 transition-transform hover:translate-x-2">
-                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 border border-white/10 text-2xl shadow-lg">🎯</div>
-                <div>
-                  <h5 className="font-black text-[#00dfd8] mb-1 uppercase tracking-wider text-[10px]">Alcance ICP</h5>
-                  <p className="text-slate-200 text-base font-medium">21.5% de empresas ICP</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-5 transition-transform hover:translate-x-2">
-                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 border border-white/10 text-2xl shadow-lg">🚀</div>
-                <div>
-                  <h5 className="font-black text-[#00dfd8] mb-1 uppercase tracking-wider text-[10px]">Conversión ICP</h5>
-                  <p className="text-slate-200 text-base font-medium">37.8% del ICP asistió</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-5 transition-transform hover:translate-x-2">
-                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 border border-white/10 text-2xl shadow-lg">📊</div>
-                <div>
-                  <h5 className="font-black text-[#00dfd8] mb-1 uppercase tracking-wider text-[10px]">Retención</h5>
-                  <p className="text-slate-200 text-base font-medium">Engagement muy alto (+60% {' > '} 1h)</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-5 transition-transform hover:translate-x-2">
-                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 border border-white/10 text-2xl shadow-lg">💬</div>
-                <div>
-                  <h5 className="font-black text-[#00dfd8] mb-1 uppercase tracking-wider text-[10px]">Interés de Mercado</h5>
-                  <p className="text-slate-200 text-base font-medium">+60 preguntas → necesidades reales del mercado</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-5 bg-rose-500/10 p-6 rounded-[2rem] border border-rose-500/20 shadow-xl">
-                <div className="w-12 h-12 bg-rose-500/20 rounded-2xl flex items-center justify-center shrink-0 border border-rose-500/30 text-2xl">⚠️</div>
-                <div>
-                  <h5 className="font-black text-rose-400 mb-1 uppercase tracking-wider text-[10px]">Acción Inmediata</h5>
-                  <p className="text-white text-base font-bold leading-tight">23 empresas ICP no asistieron → oportunidad directa de follow-up</p>
-                </div>
-              </div>
+        // Renderizar ICPs
+        document.getElementById('attended-list').innerHTML = icpAttended.map(name => `
+            <div class="flex items-center text-slate-700 text-sm font-semibold py-1.5 transition-transform hover:translate-x-1">
+                <div class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></div> ${name}
             </div>
-          </div>
-        </section>
+        `).join('');
 
-      </main>
+        document.getElementById('not-attended-list').innerHTML = icpNotAttended.map(name => `
+            <div class="bg-white p-3 rounded-xl border border-slate-200 text-slate-600 text-xs font-bold shadow-sm mb-2">
+                ${name}
+            </div>
+        `).join('');
 
-      <footer className="max-w-6xl mx-auto px-6 mt-20 border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center opacity-60">
-        <p className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 mb-4 md:mb-0 text-center">Documento Confidencial • Webinar UKG | Ataway</p>
-        <p className="text-[10px] font-black text-slate-500">© 2024 Analytics Dashboard • Powered by Strategy</p>
-      </footer>
+        // Renderizar Preguntas
+        document.getElementById('questions-container').innerHTML = questions.map(cat => `
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                <h4 class="font-black uppercase tracking-widest text-[10px] text-indigo-600 mb-6">${cat.title}</h4>
+                <div class="space-y-4">
+                    ${cat.items.map(q => `
+                        <div class="flex space-x-3 group">
+                            <i data-lucide="arrow-right" class="mt-1 text-[#00dfd8] w-4 h-4 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            <p class="text-sm text-slate-600 leading-relaxed italic font-medium">"${q}"</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
 
-      <style dangerouslySetInnerHTML={{ __html: `
-        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-      `}} />
-    </div>
-  );
-};
+        // Renderizar Estrategia
+        document.getElementById('final-strategy').innerHTML = strategy.map(item => `
+            <div class="flex items-start space-x-5 ${item.alert ? 'bg-rose-500/10 p-6 rounded-[2rem] border border-rose-500/20' : ''}">
+                <div class="w-12 h-12 ${item.alert ? 'bg-rose-500/20' : 'bg-white/5'} rounded-2xl flex items-center justify-center shrink-0 border border-white/10 text-2xl">${item.icon}</div>
+                <div>
+                    <h5 class="font-black text-[#00dfd8] mb-1 uppercase tracking-wider text-[10px]">${item.label}</h5>
+                    <p class="${item.alert ? 'text-white font-bold' : 'text-slate-200'} text-base font-medium">${item.desc}</p>
+                </div>
+            </div>
+        `).join('');
 
-export default App;
+        // Inicializar Iconos
+        lucide.createIcons();
+    </script>
+</body>
+</html>
